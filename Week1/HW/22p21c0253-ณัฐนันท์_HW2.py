@@ -70,7 +70,7 @@ def update(num):
                 stack.append(node)
     print(stack)
     nx.draw_networkx_edges(G, pos, edgelist = paths, edge_color = 'r')
-    ax.set_title("Start DFS at node 0" , fontweight="bold")
+    ax.set_title("Start DFS at node 1" , fontweight="bold")
     ax.set_title(str(stack), fontweight="bold")
     ax.set_xticks([])
     ax.set_yticks([])
