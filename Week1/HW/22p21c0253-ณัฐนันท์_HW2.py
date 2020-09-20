@@ -57,8 +57,6 @@ def createEdgeList(dfs_stk,G):
 
 edgelist = createEdgeList(dfs_stk,G)
 pos = nx.spring_layout(G)
-print(dfs_stk)
-print(edgelist)
 def update(num):
     nx.draw(G, pos, with_labels = True)
     counter = num % len(edgelist) + 1
@@ -68,15 +66,11 @@ def update(num):
         for node in path:
             if node not in stack:
                 stack.append(node)
-    print(stack)
     nx.draw_networkx_edges(G, pos, edgelist = paths, edge_color = 'r')
-    ax.set_title("Start DFS at node 1" , fontweight="bold")
-    ax.set_title(str(stack), fontweight="bold")
+    ax.set_title("Start DFS at node 1"+"\n"+str(stack) , fontweight="bold")
     ax.set_xticks([])
     ax.set_yticks([])
 
 ani = matplotlib.animation.FuncAnimation(fig, update, frames=6, interval=1000, repeat=True)
-ani.save('animation.gif', writer='imagemagick', fps=1)
+ani.save('22p21c0253-ณัฐนันท์_HW2.gif', writer='imagemagick', fps=1)
 plt.show()
-
-
